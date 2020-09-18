@@ -1,10 +1,12 @@
-let express = required('express');
-let app = express();
-let bodyParser = required('body-parser');
-let cors = required('cors');
+const express = require('express')
+const bodyParser = require('body-parser')
+const app = express()
+const port = 8080
 
-app.use(cors());
 
+var cors = require('cors')
+
+app.use(cors())
 app.use(bodyParser.json())
 app.use(
   bodyParser.urlencoded({
@@ -12,13 +14,11 @@ app.use(
   })
 )
 
-app.get('/', function (req, res) {
-  // res.send('Hello World! Second Attempt');
-  res.json({
-    text: "Simple CORS requests are working. [GET]"
-  });
-});
+app.get('/', (request, response) => {
+    response.json({ info: 'Node.js, Express, and Postgres API' })
+})
 
-app.listen(8080, function () {
-  console.log('Example app listening on port 8080!');
-});
+
+app.listen(port, () => {
+    console.log(`App running on port ${port}.`)
+})
