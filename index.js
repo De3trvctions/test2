@@ -1,5 +1,8 @@
-var express = require('express');
-var app = express();
+let express = required('express');
+let app = express();
+let cors = required('cors');
+
+app.use(cors());
 
 app.get('/', function (req, res) {
   res.send('Hello World! Second Attempt');
