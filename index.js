@@ -4,10 +4,7 @@ let bodyParser = required('body-parser');
 let cors = required('cors');
 
 app.use(cors());
-app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', '*');
-  next();
-});
+
 app.use(bodyParser.json())
 app.use(
   bodyParser.urlencoded({
@@ -16,10 +13,10 @@ app.use(
 )
 
 app.get('/', function (req, res) {
-  res.send('Hello World! Second Attempt');
-  // res.json({
-  //   text: "Simple CORS requests are working. [GET]"
-  // });
+  // res.send('Hello World! Second Attempt');
+  res.json({
+    text: "Simple CORS requests are working. [GET]"
+  });
 });
 
 app.listen(8080, function () {
