@@ -8,7 +8,7 @@ let pool = new Pool({
 })
 
 const getUsers = (request, response) => {
-  pool.query('SELECT * FROM testdb ORDER BY equip_id ASC', (error, results) => {
+  pool.query('SELECT * FROM testdb WHERE equip_id = 2', (error, results) => {
     if (error) {
       throw error
     }
