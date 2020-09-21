@@ -2,6 +2,7 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const app = express()
 const port = 8080
+const db = require('./queries')
 
 var cors = require('cors')
 
@@ -17,7 +18,7 @@ app.get('/', (request, response) => {
     response.json({ info: 'Node.js, Express, and Postgres API' })
 })
 
-// app.get('/users', db.getUsers)
+app.get('/users', db.getUsers)
 
 app.listen(port, () => {
     console.log(`App running on port ${port}.`)
