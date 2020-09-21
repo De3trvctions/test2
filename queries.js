@@ -1,14 +1,14 @@
-let Pool = required('pg').Pool
+let Pool = require('pg').Pool
 let pool = new Pool({
-  user: 'kelden',
-  host: 'localhost',
+  user: 'postgres',
+  host: '13.229.204.197',
   database: 'my_test_db',
-  password: '123',
+  password: '',
   port: 5432,
 })
 
 const getUsers = (request, response) => {
-  pool.query('SELECT * FROM users ORDER BY id ASC', (error, results) => {
+  pool.query('SELECT * FROM testdb ORDER BY equip_id ASC', (error, results) => {
     if (error) {
       throw error
     }
