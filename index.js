@@ -24,4 +24,5 @@ app.get('/users', db.getUsers)
 app.get('/users/id:id', db.getUserById)
 
 app.listen(port, () => {
-      console.log(`App running on port ${port}.`)
+  console.log(`App running on port ${port}.`)
+})
